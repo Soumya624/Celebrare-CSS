@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Celebrare: Web Development Role</title>
+    <link rel="stylesheet" href="CSS/Main.css" />
+    <link rel="stylesheet" href="CSS/Style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="rotation">
+        <div class="rotation-inner">
+          <div class="rotation-front">
+            <img src="Images/Backside.svg"/>
+          </div>
+          <div class="rotation-back">
+            <img
+              src="Images/Insider.svg"
+              class="insider"
+            />
+
+            <div id="card" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 0 2%">
+              <br/>
+              <h3>Thank You</h3>
+              <p>Thank you for the time you spend on offering this learning experience. Hope to get a call from your esteemed organization. And would love to know more about the optimized solution of this problem.</p>
+            </div>
+
+            <img
+              src="Images/Outsider.svg"
+              class="outsider"
+            />
+
+            <img
+              src="Images/Frontside.svg"
+              style="z-index: 4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const cover = document.getElementsByClassName("rotation")[0];
+    const outside = document.getElementsByClassName("outsider")[0];
+    const card = document.getElementById("card");
+
+    cover.addEventListener("mouseover", () => {
+      setTimeout(() => {
+        outside.classList.add("outsider-animation");
+        outside.style.zIndex = "-5";
+      }, 1500);
+
+      setTimeout(() => {
+        card.classList.add("card-opener");
+        setTimeout(() => {
+          card.style.zIndex = "5";
+        }, 1500);
+      }, 1500);
+    });
+    console.log("Animation Added");
+  </script>
+</html>
